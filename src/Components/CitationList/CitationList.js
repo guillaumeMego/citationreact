@@ -30,10 +30,6 @@ function CitationList() {
                         <b>Citation : </b>
                         {citation.citation}
                     </p>
-                    <p>
-                        <b>Explication : </b>
-                        {citation.Explication}
-                    </p>
                     {citation.auteur && citation.auteur.id !== null ? (
                         <p>
                             <b>Auteur : </b>
