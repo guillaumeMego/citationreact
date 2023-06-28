@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Boutton from '../bouton/Boutton';
+import { Link } from 'react-router-dom';
+
+
 
 function AuteurBio() {
   const { id } = useParams();
@@ -29,17 +33,22 @@ function AuteurBio() {
   }
 
   return (
-    <div>
+    <div className='container'>
+      <Boutton
+        name="Liste des citations"
+        color="black"
+        link="/"
+      />
       <h2>{auteur.Auteur}</h2>
+      
       <p>{auteur.Bio}</p>
 
       <h3>Citations de l'auteur :</h3>
       {citations.map(citation => (
         <div key={citation.id}>
-          <p>
-            <b>Citation : </b>
-            {citation.citation}
-          </p>
+          <ul>
+          <Link to={`/citations/${citation.id}`}>{citation.citation}</Link>
+          </ul>
         </div>
       ))}
     </div>

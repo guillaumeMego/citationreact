@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import './CitationList.css';
+
+
 function CitationList() {
     const [citations, setCitations] = useState([]);
 
@@ -23,26 +26,27 @@ function CitationList() {
 
     return (
         <div>
-            <h1>Citations:</h1>
+            <div className="allcards">
             {citations.map((citation) => (
-                <div key={citation.id}>
-                    <p>
-                        <b>Citation : </b>
+                <div key={citation.id} className='card'>
+                    <p className='citation'>
                         {citation.citation}
                     </p>
+                    <p className='plus'>
+                        <Link to={`/citations/${citation.id}`}>En savoir plus sur la citation</Link>
+                    </p>
                     {citation.auteur && citation.auteur.id !== null ? (
-                        <p>
-                            <b>Auteur : </b>
+                        <p className='auteur'>
+                            
                             <Link to={`/auteurs/${citation.auteur.id}`}>{citation.auteur.Auteur}</Link>
                         </p>
                     ) : (
                         <p>Auteur inconnu</p>
                     )}
-                    <p>
-                        <Link to={`/citations/${citation.id}`}>En savoir plus sur la citation</Link>
-                    </p>
+                   
                 </div>
             ))}
+            </div>
         </div>
     );
 }

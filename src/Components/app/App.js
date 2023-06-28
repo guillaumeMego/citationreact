@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import ReactDOM from 'react-dom';
+
 
 import CitationList from '../CitationList/CitationList';
 import AuteurBio from '../AuteurBio/AuteurBio';
@@ -11,23 +11,23 @@ import CitationDetails from '../CitationDetail/CitationDetails';
 import './App.module.css';
 
 const h1Style = {
-  fontSize: '50px',
+  fontSize: '100px',
   textAlign: 'center',
   textTransform: 'uppercase',
-  fontFamily: 'sans-serif',
   fontWeight: 'bold',
   letterSpacing: '2px',
   margin: '0',
-  padding: '20px 0',
+  padding: '15px 0',
   borderBottom: '1px solid #ccc',
-  color: '#333',
 };
 
 
 function App() {
   return (
     <div className='app'>
-      <h1 style={h1Style}>Citations</h1>
+      <h1 style={h1Style}>" Citations "</h1>
+      <div className="banniere"></div>
+      
       <Router>
         <Routes>
           <Route path="/" element={<CitationList />} />
@@ -40,3 +40,6 @@ function App() {
 }
 
 export default App;
+
+
+
