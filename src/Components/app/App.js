@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import styled from 'styled-components';
 
 import CitationList from '../CitationList/CitationList';
 import AuteurBio from '../AuteurBio/AuteurBio';

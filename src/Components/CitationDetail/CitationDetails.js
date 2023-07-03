@@ -3,8 +3,58 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Boutton from '../bouton/Boutton';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-import './CitationDetails.css'
+const CitationDetails = styled.div`
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 3px #ccc;
+
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+`;
+
+const CitationStyle = styled.p`
+width: 80%;
+text-align: center;
+font-size: 3rem;
+font-weight: 100;
+margin: 40px auto;
+font-style: italic;
+`;
+
+const ExplicationStyle = styled.p`
+    width: 80%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin: 40px auto;
+    font-style: italic;
+`;
+
+const AuteurStyle = styled.div`
+    width: 80%;
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 100;
+    margin: 60px auto;
+
+    a {
+      text-decoration: none;
+      color: #3E5341;
+      font-size: 3rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    a:hover {
+      color: #729a78;   
+    }
+`;
 
 function AuteurBio() {
   const { id } = useParams();
@@ -29,24 +79,22 @@ function AuteurBio() {
 
   return (
     <div >
-      
       {citations.map(citation => (
-        <div key={citation.id} className='citationDetails'>
+        <CitationDetails key={citation.id}>
           <Boutton
-        name="Liste des citations"
-        color="black"
-        link="/"
-      />
-          <p className='citationD'>
+            name="Liste des citations"
+            link="/"
+          />
+          <CitationStyle>
             {citation.citation}
-          </p>
-          <p className='explicationE'>
-              {citation.Explication}
-          </p>
-          <p className='auteurA'>
-          <Link to={`/auteurs/${citation.auteur.id}`}>{citation.auteur && citation.auteur.Auteur}</Link>
-          </p>
-        </div>
+          </CitationStyle>
+          <ExplicationStyle>
+            {citation.Explication}
+          </ExplicationStyle>
+          <AuteurStyle>
+            <Link to={`/auteurs/${citation.auteur.id}`}>{citation.auteur && citation.auteur.Auteur}</Link>
+          </AuteurStyle>
+        </CitationDetails>
       ))}
     </div>
   );
