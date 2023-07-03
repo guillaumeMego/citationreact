@@ -11,3 +11,7 @@
 h1{
   font-family: 'Amatic SC', cursive;
 }
+.container{
+  width: 80%;
+  margin: auto;
+}

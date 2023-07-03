@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
-h2{
+h2 {
     text-align: center;
     font-size: 2.5rem;
     margin: 0;
     padding: 0;
-
     padding: 10px;
     margin-bottom: 20px;
 }
-.allcards{
+
+.allcards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -18,7 +18,8 @@ h2{
     margin-top: 40px;
 
 }
-.card{
+
+.card {
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -35,52 +36,61 @@ h2{
     transition: all 0.3s ease-out;
     cursor: pointer;
 }
-.card:hover{
+
+.card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 6px #ccc;
 }
-.auteur{
-    margin-top: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.auteur a{
+
+.cards {
     text-decoration: none;
-    color: #000;
+}
+
+.auteur {
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.auteur a {
+    text-decoration: none;
+    color: #3E5341;
     font-size: 1.1rem;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px; 
+    letter-spacing: 1px;
+
 }
-.citation{
+
+.auteur a:hover {
+    color: #729a78;
+}
+
+.citation {
     margin-top: 70px;
     font-style: italic;
     font-size: 1.5rem;
     font-weight: 100;
 }
-.citation::before{
+
+.citation:hover {
+    color: #729a78;
+}
+
+.citation::before {
     content: '«';
     font-size: 3rem;
     position: absolute;
     top: 5px;
     left: 10px;
 }
-.citation::after{
+
+.citation::after {
     content: '»';
     font-size: 3rem;
     position: absolute;
     bottom: 10px;
     right: 10px;
-}
-.plus{
-    margin-top: 0;
-    font-size: 12px;
-}
-/* Petit discret et viuelement cliquable */
-.plus a{
-    color: blue;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: lighter;
 }

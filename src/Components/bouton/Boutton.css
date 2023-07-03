@@ -1,3 +1,23 @@
-.Boutton{
-    margin: 40px 0;
+.button{
+    border: 1px solid #ccc;
+    box-shadow: 0 3px 3px #ccc;
+    text-align: center;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color:#729a78 ;
+
 }
+.button:hover{
+    box-shadow: 0 3px 15px #ccc;
+    color: #fff;
+}
+.button a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+

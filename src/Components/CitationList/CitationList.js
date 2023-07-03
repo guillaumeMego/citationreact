@@ -28,23 +28,23 @@ function CitationList() {
         <div>
             <div className="allcards">
             {citations.map((citation) => (
+                <Link to={`/citations/${citation.id}`} className='cards'>
                 <div key={citation.id} className='card'>
                     <p className='citation'>
                         {citation.citation}
                     </p>
-                    <p className='plus'>
+                    {/* <p className='plus'>
                         <Link to={`/citations/${citation.id}`}>En savoir plus sur la citation</Link>
-                    </p>
+                    </p> */}
                     {citation.auteur && citation.auteur.id !== null ? (
                         <p className='auteur'>
-                            
                             <Link to={`/auteurs/${citation.auteur.id}`}>{citation.auteur.Auteur}</Link>
                         </p>
                     ) : (
                         <p>Auteur inconnu</p>
                     )}
-                   
                 </div>
+                </Link>
             ))}
             </div>
         </div>

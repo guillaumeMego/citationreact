@@ -4,6 +4,8 @@ import axios from 'axios';
 import Boutton from '../bouton/Boutton';
 import { Link } from 'react-router-dom';
 
+import './CitationDetails.css'
+
 function AuteurBio() {
   const { id } = useParams();
   const [citations, setCitations] = useState([]);
@@ -26,22 +28,22 @@ function AuteurBio() {
   }, [id]);
 
   return (
-    <div>
-      <Boutton
+    <div >
+      
+      {citations.map(citation => (
+        <div key={citation.id} className='citationDetails'>
+          <Boutton
         name="Liste des citations"
         color="black"
         link="/"
       />
-      {citations.map(citation => (
-        <div key={citation.id}>
-          <p>
-            <b>Citation :</b> {citation.citation}
+          <p className='citationD'>
+            {citation.citation}
           </p>
-          <p>
-            <b>Explication :</b> {citation.Explication}
+          <p className='explicationE'>
+              {citation.Explication}
           </p>
-          <p>
-          <b>Auteur :</b> 
+          <p className='auteurA'>
           <Link to={`/auteurs/${citation.auteur.id}`}>{citation.auteur && citation.auteur.Auteur}</Link>
           </p>
         </div>

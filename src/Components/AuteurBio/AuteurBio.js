@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import Boutton from '../bouton/Boutton';
 import { Link } from 'react-router-dom';
 
+import './AuteurBio.css'
+
 
 
 function AuteurBio() {
@@ -33,21 +35,23 @@ function AuteurBio() {
   }
 
   return (
-    <div className='container'>
+    <div className='auteurDetails'>
       <Boutton
         name="Liste des citations"
         color="black"
         link="/"
       />
-      <h2>{auteur.Auteur}</h2>
+      <h2 className='auteurb'>{auteur.Auteur}</h2>
       
-      <p>{auteur.Bio}</p>
+      <p className='explicationb'>{auteur.Bio}</p>
 
-      <h3>Citations de l'auteur :</h3>
+      <h3 className='h3'>Autres citations :</h3>
       {citations.map(citation => (
         <div key={citation.id}>
-          <ul>
-          <Link to={`/citations/${citation.id}`}>{citation.citation}</Link>
+          <ul className='citationsAuteur'>
+            <li>
+              <Link to={`/citations/${citation.id}`}>{citation.citation}</Link>
+            </li>
           </ul>
         </div>
       ))}
