@@ -63,7 +63,7 @@ function AuteurBio() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/citations');
+        const response = await axios.get('https://guillaume.lesacteursduweb.fr/api/citations');
         if (response.status === 200) {
           const fetchedCitations = response.data;
           const result = fetchedCitations.filter(citation => citation && citation.id === Number(id));

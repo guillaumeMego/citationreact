@@ -65,7 +65,7 @@ function AuteurBio() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/api/citations`);
+        const response = await fetch(`https://guillaume.lesacteursduweb.fr/api/citations`);
         const data = await response.json();
         const filteredCitations = data.filter(citation => citation.auteur && citation.auteur.id === Number(id));
         setCitations(filteredCitations);

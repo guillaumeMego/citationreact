@@ -98,7 +98,7 @@ function CitationList() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/citations');
+                const response = await axios.get('https://guillaume.lesacteursduweb.fr/api/citations');
                 if (response.status === 200) {
                     const fetchedCitations = response.data;
                     setCitations(fetchedCitations);
